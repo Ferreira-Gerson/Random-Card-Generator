@@ -1,1 +1,52 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  background: green;
+  box-sizing: border-box;
+}
+
+.card {
+  display: inline-block;
+  margin: auto;
+  padding: 20px;
+  margin-top: 50px;
+  border-radius: 20px;
+  width: 400px;
+  height: 600px;
+  background: white;
+  position: relative;
+}
+.top-suit {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 80px;
+}
+.botton-suit {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 80px;
+}
+.number-suit {
+  margin: auto;
+  display: block;
+  padding-block-start: 200px;
+  font-size: 80px;
+}
+.card::before {
+  content: attr(data-rank);
+}
+.spades::after {
+  content: "\2660";
+}
+.hearts::after {
+  content: "\2665";
+  color: red;
+}
+.diamonds::after {
+  content: "\2666";
+  color: red;
+}
+.clubs::after {
+  content: "\2663";
+}
