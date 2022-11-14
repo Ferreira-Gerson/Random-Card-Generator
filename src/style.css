@@ -50,3 +50,6 @@ body {
 .clubs::after {
   content: "\2663";
 }
+#colorRed {
+  color: red;
+}

@@ -25,13 +25,28 @@ let generateRandomNumber = () => {
 };
 
 let generateRandomSuit = () => {
-  let naipe = ["diamond", "spade", "heart", "cub"];
+  let naipe = ["♦", "♠", "♥", "♣"];
   let indxNaipe = Math.floor(Math.random() * naipe.length);
+  console.log(naipe[indxNaipe]);
+  if (naipe[indxNaipe] === "♦" || naipe[indxNaipe] === "♥") {
+    document.querySelector(".top-suit").setAttribute("id", "colorRed");
+    document.querySelector(".botton-suit").setAttribute("id", "colorRed");
+  }
   return naipe[indxNaipe];
 };
 
 window.onload = () => {
   //write your code here
-  document.querySelector(".card").classList.add(generateRandomSuit());
-  document.querySelector(".card").innerHTML = generateRandomNumber();
+  // document.querySelector(".card").classList.add(generateRandomSuit());
+  document.querySelector(".number-suit").innerHTML = generateRandomNumber();
+  // document.querySelector(
+  //   ".top-suit",
+  //   ".botton-suit"
+  // ).innerHTML = generateRandomSuit();
+
+  const randonsuit = generateRandomSuit();
+  document.querySelector(".top-suit").innerHTML = randonsuit;
+  document.querySelector(".botton-suit").innerHTML = randonsuit;
 };
+
+// window.setInterval(generateRandomSuit, 10000);
